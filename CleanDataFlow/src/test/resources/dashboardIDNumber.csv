@@ -1,0 +1,8 @@
+input,expected
+123456AA,true
+999999ZZ,true
+12345A,false
+1234567ABC,false
+123456ab,false
+12345678,false
+"",false
