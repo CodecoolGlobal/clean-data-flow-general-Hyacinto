@@ -15,7 +15,7 @@ public class Utility {
         }
     }
 
-    public void deleteUsers() {
+    public void deleteStudents() {
 
         String filePath = "C:\\Users\\User\\IdeaProjects\\system-under-testing-registration-form-general-Hyacinto\\student_data.json";
         ObjectMapper mapper = new ObjectMapper();
@@ -29,7 +29,7 @@ public class Utility {
         }
     }
 
-    public void deleteStudents() {
+    public void deleteUsers() {
 
         String filePath = "C:\\Users\\User\\IdeaProjects\\system-under-testing-registration-form-general-Hyacinto\\user_data.json";
         ObjectMapper mapper = new ObjectMapper();

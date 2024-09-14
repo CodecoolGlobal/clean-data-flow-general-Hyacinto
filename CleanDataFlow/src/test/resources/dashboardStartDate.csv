@@ -1,0 +1,7 @@
+input,expected
+2021-12-31,false
+2022-01-01,true
+2027-12-31,true
+2028-01-01,false
+null,false
+"",false
