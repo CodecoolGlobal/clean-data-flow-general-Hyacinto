@@ -12,9 +12,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
-
+import java.util.List;
 import java.util.Objects;
-
 
 public class DashboardTest {
     WebDriver driver;
@@ -28,7 +27,7 @@ public class DashboardTest {
     @BeforeEach
     void setUp() {
         driver = new FirefoxDriver();
-        driver.manage().window().maximize();
+        driver.manage().window().fullscreen();
         driver.get("http://127.0.0.1:5555");
         dashboardPage = new DashboardPage();
         utility = new Utility();
@@ -197,6 +196,24 @@ public class DashboardTest {
         String actualBackgroundURL = inputField.getCssValue("background-image");
         boolean result = Objects.equals(expectedBackgroundURL, actualBackgroundURL);
         Assertions.assertEquals(expected,result);
+    }
+    
+    @Test
+    void sameStudents() {
+        dashboardPage.fillAllMandatoryFields(driver);
+        WebElement submitButton = driver.findElement(By.id("submit-button"));
+        submitButton.click();
+        WebElement dataEntryButton = driver.findElement(By.linkText("Data Entry"));
+        dataEntryButton.click();
+        dashboardPage.fillAllMandatoryFields(driver);
+        submitButton = driver.findElement(By.id("submit-button"));
+        submitButton.click();
+        WebElement listButton = driver.findElement(By.linkText("List"));
+        listButton.click();
+        List<WebElement> studentCards = driver.findElements(By.cssSelector(".mb-3"));
+        int actualSize = studentCards.size();
+        int expectedSize = 1;
+        Assertions.assertEquals(expectedSize,actualSize);
     }
     
     

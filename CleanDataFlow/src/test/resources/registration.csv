@@ -1,0 +1,10 @@
+username,password,expected
+Hyacinto,9Ab*.qwe,true
+Hyacinto,aAb*.qwe,false
+Hyacinto,9ab*.qwe,false
+Hyacinto,9Ab*.qw,false
+h,9Ab*.qwe,false
+_1=EuC'}J$qO$V6rO}K('Bn+ljwyRBO9Y%p6R)3u.sJ%g7jw]t,9Ab*.qwe,false
+_1=EuC'}J$qO$V6rO}K('Bn+ljwyRBO9Y%p6R)3u.sJ%g7jw]t,9Ab*.qwe,false
+Hyacinto,"",false
+"",9Ab*.qwe,false
