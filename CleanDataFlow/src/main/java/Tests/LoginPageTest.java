@@ -1,5 +1,9 @@
-package com.codecool;
+package Tests;
 
+import Pages.DashboardPage;
+import Pages.LoginPage;
+import Pages.RegisterPage;
+import Pages.Utility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,7 +23,6 @@ public class LoginPageTest {
 
     WebDriver driver;
     DashboardPage dashboardPage;
-    Utility utility;
     LoginPage loginPage;
     String username, password;
     RegisterPage registerPage;
@@ -31,7 +34,6 @@ public class LoginPageTest {
         driver.manage().window().maximize();
         driver.get("http://127.0.0.1:5555");
         dashboardPage = new DashboardPage();
-        utility = new Utility();
         loginPage = new LoginPage();
         registerPage = new RegisterPage();
         expectedURL = "http://127.0.0.1:5555/list";
@@ -45,7 +47,7 @@ public class LoginPageTest {
 
     @AfterEach
     void tearDown() {
-        utility.deleteUsers();
+        Utility.deleteUsers();
         driver.quit();
     }
 

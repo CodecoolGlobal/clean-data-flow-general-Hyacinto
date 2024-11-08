@@ -1,0 +1,7 @@
+id,input,expected
+startDate,2021-12-31,false
+startDate,2022-01-01,true
+startDate,2027-12-31,true
+startDate,2028-01-01,false
+startDate,null,false
+startDate,"",false

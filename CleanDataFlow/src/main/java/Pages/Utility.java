@@ -1,4 +1,4 @@
-package com.codecool;
+package Pages;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -9,13 +9,13 @@ import java.io.IOException;
 
 public class Utility {
 
-    public void navigateBackMultipleTimes(WebDriver driver, int times) {
+    public static void navigateBackMultipleTimes(WebDriver driver, int times) {
         for (int i = 0; i < times; i++) {
             driver.navigate().back();
         }
     }
 
-    public void deleteStudents() {
+    public static void deleteStudents() {
 
         String filePath = "C:\\Users\\User\\IdeaProjects\\system-under-testing-registration-form-general-Hyacinto\\student_data.json";
         ObjectMapper mapper = new ObjectMapper();
@@ -29,7 +29,7 @@ public class Utility {
         }
     }
 
-    public void deleteUsers() {
+    public static void deleteUsers() {
 
         String filePath = "C:\\Users\\User\\IdeaProjects\\system-under-testing-registration-form-general-Hyacinto\\user_data.json";
         ObjectMapper mapper = new ObjectMapper();

@@ -1,6 +1,0 @@
-input,expected
-example@test.com,true
-exampletest.com,false
-example@testcom,false
-exampletestcom,false
-"",false

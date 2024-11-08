@@ -1,0 +1,8 @@
+id,input,expected
+id-card-number,123456AA,true
+id-card-number,999999ZZ,true
+id-card-number,12345A,false
+id-card-number,1234567ABC,false
+id-card-number,123456ab,false
+id-card-number,12345678,false
+id-card-number,"",false

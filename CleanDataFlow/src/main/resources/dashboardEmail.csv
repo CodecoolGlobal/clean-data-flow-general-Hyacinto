@@ -1,0 +1,6 @@
+id,input,expected
+inputEmail,example@test.com,true
+inputEmail,exampletest.com,false
+inputEmail,example@testcom,false
+inputEmail,exampletestcom,false
+inputEmail,"",false

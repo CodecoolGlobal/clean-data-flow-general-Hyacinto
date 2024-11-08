@@ -1,0 +1,7 @@
+id,input,expected
+inputPhone,+12345678,true
+inputPhone,12345678,true
+inputPhone,1234,false
+inputPhone,+36 30 8347 915,true
+inputPhone,_1=EuC'}J$qO$V6rO}K('Bn+ljwyRBO9Y%p6R)3u.sJ%g7jw]t,false
+inputPhone,"",false

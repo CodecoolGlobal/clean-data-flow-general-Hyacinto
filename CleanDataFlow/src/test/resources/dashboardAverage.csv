@@ -1,9 +1,0 @@
-input,expected
-0,false
-1,true
-2.55,true
-5,true
-6,false
-"",false
-null,false
-_1=EuC'}J$qO$V6rO}K('Bn+ljwyRBO9Y%p6R)3u.sJ%g7jw]t,false

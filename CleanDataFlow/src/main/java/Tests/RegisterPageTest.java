@@ -1,5 +1,6 @@
-package com.codecool;
+package Tests;
 
+import Pages.RegisterPage;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -12,11 +13,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Objects;
 
+import static Pages.Utility.deleteUsers;
+import static Pages.Utility.navigateBackMultipleTimes;
+
 class RegisterPageTest {
 
     WebDriver driver;
     RegisterPage registerPage;
-    Utility utility;
     String expectedURL;
     String username,password;
 
@@ -27,7 +30,6 @@ class RegisterPageTest {
         driver.get("http://127.0.0.1:5555");
         registerPage = new RegisterPage();
         expectedURL = "http://127.0.0.1:5555/login";
-        utility = new Utility();
 
         Dotenv dotenv = Dotenv.load();
         username = dotenv.get("TESTUSERNAME");
@@ -37,7 +39,7 @@ class RegisterPageTest {
     @AfterEach
     void tearDown() {
         driver.quit();
-        utility.deleteUsers();
+        deleteUsers();
     }
 
     @ParameterizedTest
@@ -53,7 +55,7 @@ class RegisterPageTest {
     void testRegistrationWithSameCredentials() {
         registerPage.registration(driver, username, password);
         String actualURL1 = driver.getCurrentUrl();
-        utility.navigateBackMultipleTimes(driver,1);
+        navigateBackMultipleTimes(driver,1);
         registerPage.registration(driver, username, password);
         String actualURL2 = driver.getCurrentUrl();
         Assertions.assertNotEquals(actualURL1,actualURL2);

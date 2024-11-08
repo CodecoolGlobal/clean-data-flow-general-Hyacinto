@@ -1,5 +1,8 @@
-package com.codecool;
+package Tests;
 
+import Pages.DashboardPage;
+import Pages.LoginPage;
+import Pages.RegisterPage;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -12,13 +15,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.List;
 
+import static Pages.Utility.*;
+
 public class LogoutTest {
 
     WebDriver driver;
     RegisterPage registerPage;
     LoginPage loginPage;
     DashboardPage dashboardPage;
-    Utility utility;
     String username,password;
 
     @BeforeEach
@@ -29,7 +33,6 @@ public class LogoutTest {
         registerPage = new RegisterPage();
         loginPage = new LoginPage();
         dashboardPage = new DashboardPage();
-        utility = new Utility();
 
         Dotenv dotenv = Dotenv.load();
         username = dotenv.get("TESTUSERNAME");
@@ -39,8 +42,8 @@ public class LogoutTest {
     @AfterEach
     void tearDown() {
         driver.quit();
-        utility.deleteUsers();
-        utility.deleteStudents();
+        deleteUsers();
+        deleteStudents();
     }
     
     @Test
@@ -55,11 +58,11 @@ public class LogoutTest {
         WebElement list = driver.findElement(By.linkText("List"));
         list.click();
         dashboardPage.logout(driver);
-        utility.navigateBackMultipleTimes(driver,1);
+        navigateBackMultipleTimes(driver,1);
         List<WebElement> studentCards = driver.findElements(By.cssSelector(".mb-3"));
         int actualSize = studentCards.size();
         int expectedSize = 0;
-        utility.navigateBackMultipleTimes(driver,1);
+        navigateBackMultipleTimes(driver,1);
         dashboardPage.fillAllMandatoryFields(driver);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");

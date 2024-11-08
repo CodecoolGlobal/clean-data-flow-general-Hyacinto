@@ -1,7 +1,0 @@
-input,expected
-+12345678,true
-12345678,true
-1234,false
-+36 30 8347 915,true
-_1=EuC'}J$qO$V6rO}K('Bn+ljwyRBO9Y%p6R)3u.sJ%g7jw]t,false
-"",false
