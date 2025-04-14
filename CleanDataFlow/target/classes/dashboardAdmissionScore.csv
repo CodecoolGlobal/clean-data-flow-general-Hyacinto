@@ -1,0 +1,8 @@
+input,expected
+admissionScore,0,false
+admissionScore,1,true
+admissionScore,100,true
+admissionScore,101,false
+admissionScore,"",false
+admissionScore,null,false
+admissionScore,_1=EuC'}J$qO$V6rO}K('Bn+ljwyRBO9Y%p6R)3u.sJ%g7jw]t,false

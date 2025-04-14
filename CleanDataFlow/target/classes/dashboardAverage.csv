@@ -1,0 +1,9 @@
+id,input,expected
+formerAverage,0,false
+formerAverage,1,true
+formerAverage,2.55,true
+formerAverage,5,true
+formerAverage,6,false
+formerAverage,"",false
+formerAverage,null,false
+formerAverage,_1=EuC'}J$qO$V6rO}K('Bn+ljwyRBO9Y%p6R)3u.sJ%g7jw]t,false

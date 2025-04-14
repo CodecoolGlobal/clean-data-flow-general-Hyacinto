@@ -1,0 +1,3 @@
+id,input,expected
+inputCourse,Jász-Nagykun-Szolnok,true
+inputCourse,,false
